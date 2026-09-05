@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: #f1f0ea;
+  color: #1c1b22;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: #e8a33d;
+  color: #1c1b22;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 2px;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-enter {
+  animation: step-in 260ms ease-out;
+}
